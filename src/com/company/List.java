@@ -111,21 +111,7 @@ public class List {
 
     public static void main(String[] args) {
 	// write your code here
-        List llist = new List();
-        llist.insert(1);
-        llist.head.next = new ListNode(2);
-        llist.head.next.next = new ListNode(3);
-        llist.head.next.next.next = new ListNode(4);
-        llist.head.next.next.next.next = new ListNode(5);
-        llist.head.next.next.next.next.next = new ListNode(6);
-        llist.head.next.next.next.next.next.next = new ListNode(7);
-        llist.head.next.next.next.next.next.next.next = new ListNode(9);
-        ListNode loopStart = new ListNode(10);
-        llist.head.next.next.next.next.next.next.next.next = loopStart;
-        loopStart.next = llist.head.next.next.next.next;
-
-        ListNode loops = llist.findLoopPosition(llist);
-        System.out.println("Loop Starts at: " + loops.value);
+        
 
     }
 }
