@@ -27,7 +27,7 @@ public class List {
     }
 
     //Floyd's Cycle Finding Algorithm
-    ListNode findLoopPosition(List llist) {
+    static ListNode findLoopPosition(List llist) {
 
         ListNode fast = llist.head;
         ListNode slow = llist.head;
@@ -74,8 +74,8 @@ public class List {
         return false;
     }
 
-    void print(List llist) {
-        ListNode curr = llist.head;
+    void print() {
+        ListNode curr = head;
         while(curr != null) {
                 System.out.print(curr.value);
                 curr = curr.next;
@@ -124,7 +124,7 @@ public class List {
         llist.head.next.next.next.next.next.next.next.next = loopStart;
         loopStart.next = llist.head.next.next.next.next;
 
-        ListNode loops = llist.findLoopPosition(llist);
+        ListNode loops = findLoopPosition(llist);
         System.out.println("Loop Starts at: " + loops.value);
 
     }
