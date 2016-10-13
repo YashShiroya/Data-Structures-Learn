@@ -110,8 +110,7 @@ public class List {
     }
 
     public static void main(String[] args) {
-	// write your code here
-        //yolo
+
         List llist = new List();
         llist.insert(1);
         llist.head.next = new ListNode(2);
