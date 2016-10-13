@@ -26,6 +26,25 @@ public class List {
         else return 0;
     }
 
+    //Counter-clockwise rotate list k times
+    static void rotateByk(int k) {
+        ListNode listHead = head;
+        ListNode curr = head;
+        //reach last element
+        while(curr.next != null) curr = curr.next;
+        curr.next = listHead;
+
+        int i = 0;
+
+        while(i < k - 1) {
+            listHead = listHead.next;
+            i++;
+        }
+        head = listHead.next;
+        listHead.next = null;
+
+    }
+
     //Floyd's Cycle Finding Algorithm
     static ListNode findLoopPosition(List llist) {
 
@@ -74,7 +93,7 @@ public class List {
         return false;
     }
 
-    void print() {
+    static void print() {
         ListNode curr = head;
         while(curr != null) {
                 System.out.print(curr.value);
@@ -120,12 +139,19 @@ public class List {
         llist.head.next.next.next.next.next = new ListNode(6);
         llist.head.next.next.next.next.next.next = new ListNode(7);
         llist.head.next.next.next.next.next.next.next = new ListNode(9);
-        ListNode loopStart = new ListNode(10);
-        llist.head.next.next.next.next.next.next.next.next = loopStart;
-        loopStart.next = llist.head.next.next.next.next;
 
-        ListNode loops = findLoopPosition(llist);
-        System.out.println("Loop Starts at: " + loops.value);
+//Loop Detection nodes
+//        ListNode loopStart = new ListNode(10);
+//        llist.head.next.next.next.next.next.next.next.next = loopStart;
+//        loopStart.next = llist.head.next.next.next.next;
+//        ListNode loops = findLoopPosition(llist);
+//        System.out.println("Loop Starts at: " + loops.value);
+
+        print();
+
+        rotateByk(4);
+
+        print();
 
     }
 }
